@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     // 1- Data
     private Context context;
@@ -28,9 +28,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     }
 
 
-
     // 3- View Holder
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView gameImg;
         private TextView gameTitle;
 
@@ -46,7 +45,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_item,parent,false);
+                .inflate(R.layout.card_item, parent, false);
         return new ViewHolder(view);
     }
 
@@ -57,13 +56,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         holder.gameImg.setImageResource(model.getGameImg());
 
 
-
         // Handle the click events
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(context, "" +
-                        "You choose: "+gamesList.get(position).getGameName(), Toast.LENGTH_SHORT).show();
+                        "You choose: " + gamesList.get(position).getGameName(), Toast.LENGTH_SHORT).show();
             }
         });
 
